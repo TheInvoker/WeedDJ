@@ -105,6 +105,24 @@ $("#search_purchases").click(function() {
 		//var count = 0;
 		$("#playlist_results").empty();
 
+		$("#playlist_results").append(
+			'<div class="playlist-item non-compliant">' +
+				'<h2>Non-Compliant based on advertising cannabis</h2>' +
+				'<div>' +
+					'Title: ' + 'Weed For You' +
+				'</div>' +
+				'<div>' +
+					'Artist: ' + 'SpliffMan' +
+				'</div>' +
+				'<div>' +
+					'Result: ' + 'Hey buy some of this <em>banana</em> <em>peach</em> weed, its what you need' +
+				'</div>' +
+				'<div>' +
+					'Preview: <span>Hey buy some of this banana peach weed, its what you need</span>' +
+				'</div>' +
+			'</div>'
+			);
+
 		strains.map(function(strain) {
 			$.ajax({
 				url: '/getPlaylist?search=' + strain,
@@ -128,7 +146,7 @@ $("#search_purchases").click(function() {
 								'Preview: <span>' + item.snippet + '</span>' +
 							'</div>' +
 							'<div>' +
-								'Youtube: <a target="_blank" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(item.title + ' song') + '"><img src="/images/youtube-logo-icon-transparent---32.png" height="25px" style="position:relative;top:3px;"></a>' +
+								'Youtube: <a target="_blank" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(item.title + ' by ' + item.artist.name) + '"><img src="/images/youtube-logo-icon-transparent---32.png" height="25px" style="position:relative;top:3px;"></a>' +
 							'</div>' +
 						'</div>'
 						);
@@ -142,7 +160,7 @@ $("#search_purchases").click(function() {
 		});
 	});
 
-	$("body").on('click', '.playlist-item', function() {
+	$("body").on('click', '.playlist-item:not(.non-compliant)', function() {
 		var snippet = $(this).find('span').text();
 		readText(snippet, function() {
 

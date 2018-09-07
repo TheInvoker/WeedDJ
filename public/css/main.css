@@ -41,3 +41,7 @@ em {
 	border-radius:12px;
 	cursor:pointer;
 }
+
+.non-compliant {
+	border:9px dashed red;
+}
