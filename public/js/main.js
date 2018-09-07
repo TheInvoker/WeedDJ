@@ -106,6 +106,10 @@ $("#search_purchases").click(function() {
 		$("#playlist_results").empty();
 
 		$("#playlist_results").append(
+			'<div><a target="_blank" href="https://www.youtube.com/watch?v=WeYsTmIzjkw&list=PLhUkYnexjFz8uJ_Q_9NdSdCgY0A33g38J">You may like this playlist</a></div><br/>'
+		);
+
+		$("#playlist_results").append(
 			'<div class="playlist-item non-compliant">' +
 				'<h2>Non-Compliant based on advertising cannabis</h2>' +
 				'<div>' +
