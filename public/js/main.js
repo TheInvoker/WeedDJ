@@ -53,6 +53,8 @@ $("#search_purchases").click(function() {
 				'</div>'
 				);
 			});
+
+			document.getElementById("purchase_results").scrollIntoView(); 
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown){
 			alert(errorThrown);
@@ -88,6 +90,8 @@ $("#search_purchases").click(function() {
 					);
 				});
 				$("#item_results").append('<button class="get-playlist">Get Playlist</button>');
+
+				document.getElementById("item_results").scrollIntoView(); 
 			},
 			error: function(XMLHttpRequest, textStatus, errorThrown){
 				alert(errorThrown);
@@ -162,6 +166,8 @@ $("#search_purchases").click(function() {
 			});
 			//$("#playlist_results").append('<button>Loop All</button>');
 		});
+
+		document.getElementById("playlist_results").scrollIntoView(); 
 	});
 
 	$("body").on('click', '.playlist-item:not(.non-compliant)', function() {
