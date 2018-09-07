@@ -2,98 +2,42 @@ html {
 	height:100%;
 }
 body {
-	margin:0;
 	height:100%;
 	font-family: 'Roboto', sans-serif;
+	background-image: url('/images/1.jpg');
+	background-size:100%;
 }
 
-.ch_page {
-	height:100%;
-	text-align:center;
-	padding:10px;
-	font-size:30px;
-	align-items: center;
-	justify-content: center;
-	display:flex;
-	flex-direction:column;
-	box-sizing:border-box;
-	color:white;
-	background-image: url('/images/Cannabis_sky_9d69a5d9-d03c-4547-9d40-f049b7e349d4.jpg');
-	background-size:cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.ch_page:not(.ch_show) {
-	display:none;
-}
-.ch_page_0 {
-
-}
-.ch_page_2 {
-
-}
-.ch_page_3 {
-
-}
-.ch_page_4 {
-
-}
-.ch_page_5 {
-
-}
-.ch_page_6 {
-
-}
-
-
-.noselect {
-	-webkit-touch-callout: none; /* iOS Safari */
-	  -webkit-user-select: none; /* Safari */
-	   -khtml-user-select: none; /* Konqueror HTML */
-		 -moz-user-select: none; /* Firefox */
-		  -ms-user-select: none; /* Internet Explorer/Edge */
-			  user-select: none; /* Non-prefixed version, currently
-									supported by Chrome and Opera */
-}
-.cb_shade{
-	padding:5px 10px;
-	background-color:rgba(0,0,0,0.7);
-}
-.cb_table_select {
-	background-color:black;
-	border-spacing: 10px;
-	margin-top:10px;
-}
-.cb_table_select td {
-	background-color:rgb(66, 66, 66);
-	padding:5px 20px;
-	font-weight:bold;
-	cursor:pointer;
-}	
-.cb_table_select.active td:active {
-	background-color:#0a6cb5;
-}	
 h2 {
-	margin:0;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+em {
+	font-weight: bold;
+	background-color:yellow;
+	padding:2px 5px;
 }
 
-
-
-.ch_page input {
-	box-sizing:border-box;
-	border:2px solid white;
-	font-size:20px;
-	margin:10px;
-	padding:3px;
-	width:100%;
-	max-width:300px;
+.purchase-item {
+	background-color:#ffe7ba;
+	border:2px solid orange;
+	padding:10px;
+	margin-bottom:10px;
+	border-radius:12px;
+	cursor:pointer;
 }
-
-#cb_fingerprint {
-	width:200px;
-	height:250px;
-	background-position: center;
-	background-size:cover;
-	background-image: url('/images/mobile-payments-fingerprints-security-4961.jpg');
-	margin:10px 0;
+.order-item {
+	background-color:#bad2ff;
+	border:2px solid rgb(17, 0, 255);
+	padding:10px;
+	border-radius:12px;
+	margin-bottom:10px;
+}
+.playlist-item {
+	background-color:#ffbacf;
+	border:2px solid rgb(255, 0, 76);
+	padding:10px;
+	margin-bottom:10px;
+	border-radius:12px;
+	cursor:pointer;
 }

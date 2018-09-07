@@ -28,13 +28,13 @@ $("#search_purchases").click(function() {
 	var start_date = $("#start_date").val();
 	var end_date = $("#end_date").val();
 
+	$("#purchase_results").empty();
 	$.ajax({
 		url: '/getPurchases?start_date=' + start_date + '&end_date=' + end_date,
 		type: 'GET',
 		success: function(data, textStatus, jqXHR){
 			console.log(data);
 
-			$("#purchase_results").empty();
 			data.items.map(function(item) {
 				$("#purchase_results").append(
 				'<div class="purchase-item" data-barcode="' + item.barcode + '">' +
@@ -62,13 +62,13 @@ $("#search_purchases").click(function() {
 	$("body").on('click', '.purchase-item', function() {
 		var barcode = this.getAttribute('data-barcode');
 
+		$("#item_results").empty();
 		$.ajax({
 			url: '/getPurchase?barcode=' + barcode,
 			type: 'GET',
 			success: function(data, textStatus, jqXHR){
 				console.log(data);
-	
-				$("#item_results").empty();
+				
 				data.purchaseOrderItems.map(function(item) {
 					$("#item_results").append(
 					'<div class="order-item" data-id="' + item.id + '" data-strain-title="' + item.strain.title + '">' +
@@ -103,6 +103,8 @@ $("#search_purchases").click(function() {
 		});
 
 		//var count = 0;
+		$("#playlist_results").empty();
+
 		strains.map(function(strain) {
 			$.ajax({
 				url: '/getPlaylist?search=' + strain,
@@ -110,12 +112,14 @@ $("#search_purchases").click(function() {
 				success: function(data, textStatus, jqXHR){
 					console.log(data);
 		
-					$("#playlist_results").empty();
 					data.tracks.map(function(item) {
 						$("#playlist_results").append(
 						'<div class="playlist-item">' +
 							'<div>' +
 								'Title: ' + item.title +
+							'</div>' +
+							'<div>' +
+								'Artist: ' + item.artist.name +
 							'</div>' +
 							'<div>' +
 								'Result: ' + item.context +
@@ -124,7 +128,7 @@ $("#search_purchases").click(function() {
 								'Preview: <span>' + item.snippet + '</span>' +
 							'</div>' +
 							'<div>' +
-								'Play: <button class="play-music">Play</button>' +
+								'Youtube: <a target="_blank" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(item.title + ' song') + '"><img src="/images/youtube-logo-icon-transparent---32.png" height="25px" style="position:relative;top:3px;"></a>' +
 							'</div>' +
 						'</div>'
 						);
@@ -134,14 +138,19 @@ $("#search_purchases").click(function() {
 					alert(errorThrown);
 				}
 			});
+			//$("#playlist_results").append('<button>Loop All</button>');
 		});
 	});
 
-	$("body").on('click', '.play-music', function() {
-		var snippet = $(this).parent().prev().find('span').text();
+	$("body").on('click', '.playlist-item', function() {
+		var snippet = $(this).find('span').text();
 		readText(snippet, function() {
 
 		});
+	});
+
+	$("body").on('click', '.playlist-item a', function(e) {
+		e.stopPropagation();
 	});
 });
 
