@@ -33,7 +33,7 @@ $("#search_purchases").click(function() {
 		url: '/getPurchases?start_date=' + start_date + '&end_date=' + end_date,
 		type: 'GET',
 		success: function(data, textStatus, jqXHR){
-			console.log(data);
+			//console.log(data);
 
 			data.items.map(function(item) {
 				$("#purchase_results").append(
@@ -67,7 +67,7 @@ $("#search_purchases").click(function() {
 			url: '/getPurchase?barcode=' + barcode,
 			type: 'GET',
 			success: function(data, textStatus, jqXHR){
-				console.log(data);
+				//console.log(data);
 				
 				data.purchaseOrderItems.map(function(item) {
 					$("#item_results").append(
@@ -110,7 +110,7 @@ $("#search_purchases").click(function() {
 				url: '/getPlaylist?search=' + strain,
 				type: 'GET',
 				success: function(data, textStatus, jqXHR){
-					console.log(data);
+					//console.log(data);
 		
 					data.tracks.map(function(item) {
 						$("#playlist_results").append(

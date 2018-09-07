@@ -103,7 +103,7 @@ function SearchLyrics(searchStr, success, fail) {
        territory: 'US',
        reqtype: 'default',
        searchtype: 'track',
-       lyrics: searchStr,
+       all: searchStr,
        output: 'json' },
        headers:  { }
      };
