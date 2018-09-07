@@ -12,12 +12,12 @@ App Screenshot: assets/localhost_3000_.png
 
 To Launch App:
 
-npm install express
-npm install https
-npm install http
-npm install request
-npm install fs-extra
-npm install path
+- npm install express
+- npm install https
+- npm install http
+- npm install request
+- npm install fs-extra
+- npm install path
 
 Then do
 
