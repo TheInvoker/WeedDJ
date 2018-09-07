@@ -7,8 +7,8 @@ Music that complements you while high!
 We provide you with the best playlist for the weed you get high to.
 
 
-Business Idea: assets/Pitch.docx
-App Screenshot: assets/localhost_3000_.png
+- Business Idea: assets/Pitch.docx
+- App Screenshot: assets/localhost_3000_.png
 
 To Launch App:
 
