@@ -34,7 +34,7 @@ $("#search_purchases").click(function() {
 		type: 'GET',
 		success: function(data, textStatus, jqXHR){
 			//console.log(data);
-
+			$("#purchase_results").append("<p>Select a purchase:</p>");
 			data.items.map(function(item) {
 				$("#purchase_results").append(
 				'<div class="purchase-item" data-barcode="' + item.barcode + '">' +
@@ -62,6 +62,7 @@ $("#search_purchases").click(function() {
 	});
 
 	$("body").on('click', '.purchase-item', function() {
+		$(this).addClass("active");
 		var barcode = this.getAttribute('data-barcode');
 
 		$("#item_results").empty();
@@ -110,7 +111,7 @@ $("#search_purchases").click(function() {
 		$("#playlist_results").empty();
 
 		$("#playlist_results").append(
-			'<div><a target="_blank" href="https://www.youtube.com/watch?v=WeYsTmIzjkw&list=PLhUkYnexjFz8uJ_Q_9NdSdCgY0A33g38J">You may like this playlist</a></div><br/>'
+			'<div id="ad-item"><a target="_blank" href="https://www.youtube.com/watch?v=WeYsTmIzjkw&list=PLhUkYnexjFz8uJ_Q_9NdSdCgY0A33g38J">WeedDJ Ads: Popular Playlist</a></div><br/>'
 		);
 
 		$("#playlist_results").append(

@@ -19,29 +19,40 @@ em {
 }
 
 .purchase-item {
-	background-color:#ffe7ba;
-	border:2px solid orange;
+	background-color:white;
+	box-shadow:0 0 5px black;
 	padding:10px;
 	margin-bottom:10px;
-	border-radius:12px;
 	cursor:pointer;
 }
 .order-item {
-	background-color:#bad2ff;
-	border:2px solid rgb(17, 0, 255);
+	background-color:white;
+	box-shadow:0 0 5px black;
 	padding:10px;
-	border-radius:12px;
 	margin-bottom:10px;
 }
 .playlist-item {
-	background-color:#ffbacf;
-	border:2px solid rgb(255, 0, 76);
+	background-color:white;
+	box-shadow:0 0 5px black;
 	padding:10px;
 	margin-bottom:10px;
-	border-radius:12px;
 	cursor:pointer;
 }
 
 .non-compliant {
-	border:9px dashed red;
+	background-color: rgb(255, 190, 190);
+}
+
+#ad-item {
+	padding:3px;
+	background-color:rgb(255, 255, 199);
+}
+#ad-item a {
+	color:grey;
+	text-decoration: none;
+	font-weight:bold;
+	display:block;
+}
+.active {
+	border:2px solid rgb(0, 157, 168);
 }
